@@ -82,4 +82,4 @@ with gr.Blocks(css='#chatbot .overflow-y-auto{height:500px}') as demo:
     txt.submit(lambda: '' , None, txt)
 
 
-demo.launch(debug=True, share=False)
+demo.launch(debug=True, share=True)
