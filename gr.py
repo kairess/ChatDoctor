@@ -1,7 +1,6 @@
 import gradio as gr
 import torch
 import transformers
-import torch
 
 model_name = "/content/drive/MyDrive/ChatDoctor_weights"
 print("Loading "+model_name+"...")
@@ -23,7 +22,7 @@ model = transformers.LLaMAForCausalLM.from_pretrained(
 generator = model.generate
 
 def answer(state, state_chatbot, text):
-    state = state + [f"Patient: {text}"] # TODO
+    state = state + [f"Patient: {text}"]
 
     fulltext = "If you are a doctor, please answer the medical questions based on the patient's description. \n\n" + "\n\n".join(state) + "\n\n" + "ChatDoctor: "
 
